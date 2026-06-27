@@ -1,5 +1,15 @@
 # CAN Bus IDS — Hardware (Verilog / FPGA)
 
+> **TL;DR** — The CAN intrusion detector in **synthesizable Verilog**, built for an FPGA
+> gateway. A self-checking testbench passes under Icarus Verilog: no false alarms on normal
+> traffic, then it raises TIMING + UNKNOWN_ID alerts on attacks at **1-cycle latency**.
+
+### Quickstart
+```bash
+iverilog -o can_ids_sim.vvp rtl/can_ids.v tb/can_ids_tb.v && vvp can_ids_sim.vvp
+# (Windows: double-click run.bat)
+```
+
 A **timing-based CAN intrusion detector implemented in synthesizable Verilog** — the
 hardware version of the Python CAN IDS, meant to sit on an **embedded automotive gateway**
 (an FPGA between the CAN transceiver and the ECUs) and flag attacks at line rate, in one

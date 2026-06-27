@@ -1,0 +1,9 @@
+# simulation build artifacts
+*.vvp
+*.vcd
+*.out
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
